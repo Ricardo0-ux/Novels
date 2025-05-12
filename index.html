@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leitor de Novels</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <h1>Leitor de Novels</h1>
+    <div class="search-container">
+      <input type="text" placeholder="Buscar novel..." id="searchInput" />
+      <button id="searchButton"><i class="fas fa-search"></i> Buscar</button>
+    </div>
+    <div id="authButtons">
+      <button id="loginButton"><i class="fas fa-sign-in-alt"></i> Login</button>
+      <button id="registerButton"><i class="fas fa-user-plus"></i> Registrar</button>
+    </div>
+  </header>
+  <main id="novelList">
+    <div class="loading">Carregando novels...</div>
+  </main>
+  
+  <!-- Modal de Login -->
+  <div id="loginModal" class="modal" style="display: none;">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginUsername">Usuário</label>
+          <input type="text" id="loginUsername" required />
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Senha</label>
+          <input type="password" id="loginPassword" required />
+        </div>
+        <button type="submit">Entrar</button>
+        <button type="button" id="cancelLogin">Cancelar</button>
+      </form>
+      <div id="loginError" class="error" style="display: none;"></div>
+    </div>
+  </div>
+  
+  <!-- Modal de Registro -->
+  <div id="registerModal" class="modal" style="display: none;">
+    <div class="login-container">
+      <h2>Registrar</h2>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="registerUsername">Usuário</label>
+          <input type="text" id="registerUsername" required />
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Senha</label>
+          <input type="password" id="registerPassword" required />
+        </div>
+        <div class="form-group">
+          <label for="registerConfirmPassword">Confirmar Senha</label>
+          <input type="password" id="registerConfirmPassword" required />
+        </div>
+        <button type="submit">Registrar</button>
+        <button type="button" id="cancelRegister">Cancelar</button>
+      </form>
+      <div id="registerError" class="error" style="display: none;"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
